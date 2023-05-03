@@ -6,6 +6,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "source": "./src/index.ts",
   "exports": {
     "require": "./dist/cjs/index.cjs",
     "default": "./dist/modern/index.js"
