@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/jasonsbarr/ts-numbers/issues"
   },
-  "homepage": "https://github.com/jasonsbarr/ts-numbers#readme"
+  "homepage": "https://github.com/jasonsbarr/ts-numbers#readme",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "ts-node": "^10.9.1"
+  }
 }
