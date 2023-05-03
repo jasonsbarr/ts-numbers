@@ -2,9 +2,13 @@
   "name": "@jasonsbarr/ts-numbers",
   "version": "1.0.0",
   "description": "A TypeScript implementation of Scheme's numeric tower",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier -w ./src"
   },
   "repository": {
     "type": "git",
