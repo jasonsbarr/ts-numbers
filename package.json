@@ -1,0 +1,24 @@
+{
+  "name": "@jasonsbarr/ts-numbers",
+  "version": "1.0.0",
+  "description": "A TypeScript implementation of Scheme's numeric tower",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jasonsbarr/ts-numbers.git"
+  },
+  "keywords": [
+    "numbers",
+    "typescript",
+    "scheme"
+  ],
+  "author": "Jason Barr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonsbarr/ts-numbers/issues"
+  },
+  "homepage": "https://github.com/jasonsbarr/ts-numbers#readme"
+}
