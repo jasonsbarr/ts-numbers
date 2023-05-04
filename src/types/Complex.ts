@@ -1,15 +1,16 @@
 import { BoxedNumber } from "./BoxedNumber";
 import { Levels } from "./Levels";
+import { NativeNumber } from "./NativeNumber";
 import { NumberType } from "./NumberType";
 
 export class Complex implements BoxedNumber {
   public level: Levels;
 
-  public constructor(public r: NumberType, public i: NumberType) {
+  public constructor(public r: NativeNumber, public i: NativeNumber) {
     this.level = Levels.Complex;
   }
 
-  public static create(r: NumberType, i: NumberType) {
+  public static create(r: NativeNumber, i: NativeNumber) {
     return new Complex(r, i);
   }
 
