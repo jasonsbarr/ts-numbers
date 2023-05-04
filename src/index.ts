@@ -17,3 +17,9 @@
 
 // A boxed-scheme-number is either BigInteger, Rational, FloatPoint, or Complex.
 // An integer-scheme-number is either fixnum or BigInteger.
+import { Complex } from "./types/Complex";
+import { Float } from "./types/Float";
+import { Integer } from "./types/Integer";
+import { Rational } from "./types/Rational";
+
+export { Complex, Float, Integer, Rational };
