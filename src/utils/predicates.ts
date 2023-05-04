@@ -1,13 +1,13 @@
-import { BoxedNumber } from "src/types/BoxedNumber";
-import { Levels } from "src/types/Levels";
+import { Levels } from "../types/Levels";
+import { NumberType } from "../types/NumberType";
 
-export function isComplex(n: number | bigint | BoxedNumber) {
+export function isComplex(n: NumberType) {
   return (
     typeof n !== "number" && typeof n !== "bigint" && n.level === Levels.Complex
   );
 }
 
-export function isRational(n: number | bigint | BoxedNumber) {
+export function isRational(n: NumberType) {
   return (
     typeof n !== "number" &&
     typeof n !== "bigint" &&
@@ -15,7 +15,7 @@ export function isRational(n: number | bigint | BoxedNumber) {
   );
 }
 
-export function isFloat(n: number | bigint | BoxedNumber) {
+export function isFloat(n: NumberType) {
   if (typeof n === "number") {
     return !Number.isInteger(n);
   } else if (typeof n === "bigint") {
@@ -25,7 +25,7 @@ export function isFloat(n: number | bigint | BoxedNumber) {
   return n.level === Levels.Float;
 }
 
-export function isInteger(n: number | bigint | BoxedNumber) {
+export function isInteger(n: NumberType) {
   if (typeof n === "number") {
     return Number.isInteger(n);
   } else if (typeof n === "bigint") {

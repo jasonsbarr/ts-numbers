@@ -1,18 +1,19 @@
-import { Number } from "src/types/Number";
-import { BoxedNumber } from "src/types/BoxedNumber";
-import { Integer } from "src/types/Integer";
-import { makeBignum, makeFixnum, numerator, realPart } from "./conversion";
+import { NumberType } from "../types/NumberType";
+import { BoxedNumber } from "../types/BoxedNumber";
+import { Integer } from "../types/Integer";
+import { numerator, realPart } from "./conversion";
 import { isComplex, isFloat, isOverflow, isRational } from "./predicates";
+import { makeBignum, makeFixnum } from "./constructors";
 
 type OnFixnumsUnary = (n: number) => any;
-type OnBignumsUnary = (n: Number) => any;
+type OnBignumsUnary = (n: NumberType) => any;
 
 export function makeIntegerUnOp(
   onFixnums: OnFixnumsUnary,
   onBignums: OnBignumsUnary,
   options = { ignoreOverflow: false }
 ) {
-  return (m: Number) => {
+  return (m: NumberType) => {
     if (isRational(m)) {
       m = numerator(m);
     } else if (isComplex(m)) {

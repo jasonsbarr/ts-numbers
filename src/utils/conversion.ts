@@ -1,19 +1,8 @@
-import { Integer } from "src/types/Integer";
-import { Number } from "src/types/Number";
+import { NumberType } from "../types/NumberType";
+import { isOverflow } from "./predicates";
+import { makeBignum } from "./constructors";
 
-export function makeBignum(n: Number): Integer {}
-
-export function makeFixnum(n: Number): number {
-  if (typeof n === "number") {
-    return n;
-  } else if (typeof n === "bigint") {
-    return Number(n);
-  }
-
-  return n.toFixnum();
-}
-
-export function numerator(n: Number) {
+export function numerator(n: NumberType) {
   if (typeof n === "number") {
     return n;
   } else if (typeof n === "bigint") {
@@ -23,7 +12,7 @@ export function numerator(n: Number) {
   return n.numerator();
 }
 
-export function realPart(n: Number) {
+export function realPart(n: NumberType) {
   if (typeof n === "number") {
     return n;
   } else if (typeof n === "bigint") {
@@ -31,4 +20,14 @@ export function realPart(n: Number) {
   }
 
   return n.realPart();
+}
+
+export function stringToInt(s: string, radix = 10): number | bigint {
+  const result = parseInt(s, radix);
+
+  if (isOverflow(result)) {
+    return BigInt(s);
+  }
+
+  return result;
 }
