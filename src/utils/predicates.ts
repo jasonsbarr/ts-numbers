@@ -38,3 +38,7 @@ export function isInteger(n: NumberType) {
 export function isOverflow(n: number) {
   return n > Number.MAX_SAFE_INTEGER || n < Number.MIN_SAFE_INTEGER;
 }
+
+export function isFinite(n: number) {
+  return Number.isFinite(n);
+}
