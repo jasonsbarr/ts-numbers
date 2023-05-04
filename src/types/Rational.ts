@@ -18,7 +18,7 @@ export class Rational implements BoxedNumber {
   greaterThanOrEqual(other: NumberType): boolean {}
   lessThan(other: NumberType): boolean {}
   lessThanOrEqual(other: NumberType): boolean {}
-  equals(other: BoxedNumber): boolean {}
+  equals(other: NumberType): boolean {}
 
   // Operations
   add(other: NumberType): BoxedNumber {}
