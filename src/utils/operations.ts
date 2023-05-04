@@ -12,7 +12,7 @@ export function makeIntegerUnOp(
   onFixnums: OnFixnumsUnary,
   onBignums: OnBignumsUnary,
   options = { ignoreOverflow: false }
-) {
+): (m: NumberType) => any {
   return (m: NumberType) => {
     if (isRational(m)) {
       m = numerator(m);
