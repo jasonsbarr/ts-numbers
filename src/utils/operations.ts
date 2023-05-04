@@ -47,6 +47,6 @@ export const integerIsOne = makeIntegerUnOp(
       return n === 1n;
     }
 
-    return (n as BoxedNumber).equals(Integer.ONE);
+    return n.equals(Integer.ONE);
   }
 );
