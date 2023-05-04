@@ -1,14 +1,15 @@
 import { Number } from "src/types/Number";
-import { BoxedNumber } from "../types/BoxedNumber";
+import { BoxedNumber } from "src/types/BoxedNumber";
+import { Integer } from "src/types/Integer";
 import { makeBignum, makeFixnum, numerator, realPart } from "./conversion";
 import { isComplex, isFloat, isOverflow, isRational } from "./predicates";
 
-type OnFixnums = (n: number) => number;
-type OnBignums = (n: Number) => BoxedNumber;
+type OnFixnumsUnary = (n: number) => any;
+type OnBignumsUnary = (n: Number) => any;
 
 export function makeIntegerUnOp(
-  onFixnums: OnFixnums,
-  onBignums: OnBignums,
+  onFixnums: OnFixnumsUnary,
+  onBignums: OnBignumsUnary,
   options = { ignoreOverflow: false }
 ) {
   return (m: Number) => {
@@ -38,4 +39,13 @@ export function makeIntegerUnOp(
   };
 }
 
-// export const integerIsOne;
+export const integerIsOne = makeIntegerUnOp(
+  (n) => n === 1,
+  (n) => {
+    if (typeof n === "bigint") {
+      return n === 1n;
+    }
+
+    return (n as BoxedNumber).equals(Integer.ONE);
+  }
+);
