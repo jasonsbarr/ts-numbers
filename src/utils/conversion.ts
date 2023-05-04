@@ -2,7 +2,7 @@ import { NumberType } from "../types/NumberType";
 import { isOverflow } from "./predicates";
 import { makeBignum } from "./constructors";
 
-export function numerator(n: NumberType) {
+export function numerator(n: NumberType): NumberType {
   if (typeof n === "number") {
     return n;
   } else if (typeof n === "bigint") {
@@ -12,7 +12,7 @@ export function numerator(n: NumberType) {
   return n.numerator();
 }
 
-export function realPart(n: NumberType) {
+export function realPart(n: NumberType): NumberType {
   if (typeof n === "number") {
     return n;
   } else if (typeof n === "bigint") {
