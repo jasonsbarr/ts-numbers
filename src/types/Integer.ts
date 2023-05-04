@@ -20,18 +20,18 @@ export class Integer implements BoxedNumber {
   }
 
   // Comparison
-  greaterThan(other: BoxedNumber): boolean {}
-  greaterThanOrEqual(other: BoxedNumber): boolean {}
-  lessThan(other: BoxedNumber): boolean {}
-  lessThanOrEqual(other: BoxedNumber): boolean {}
-  equals(other: BoxedNumber): boolean {}
+  greaterThan(other: NumberType): boolean {}
+  greaterThanOrEqual(other: NumberType): boolean {}
+  lessThan(other: NumberType): boolean {}
+  lessThanOrEqual(other: NumberType): boolean {}
+  equals(other: NumberType): boolean {}
 
   // Operations
-  add(other: BoxedNumber): BoxedNumber {}
-  subtract(other: BoxedNumber): BoxedNumber {}
-  multiply(other: BoxedNumber): BoxedNumber {}
-  divide(other: BoxedNumber): BoxedNumber {}
-  expt(other: BoxedNumber): BoxedNumber {}
+  add(other: NumberType): BoxedNumber {}
+  subtract(other: NumberType): BoxedNumber {}
+  multiply(other: NumberType): BoxedNumber {}
+  divide(other: NumberType): BoxedNumber {}
+  expt(other: NumberType): BoxedNumber {}
   numerator(): BoxedNumber {}
   denominator(): BoxedNumber {}
   integerSqrt(): BoxedNumber {}
