@@ -8,6 +8,10 @@ export class Float implements BoxedNumber {
     this.level = Levels.Float;
   }
 
+  public static create(n: number) {
+    return new Float(n);
+  }
+
   // Comparison
   greaterThan(other: BoxedNumber): boolean {}
   greaterThanOrEqual(other: BoxedNumber): boolean {}
